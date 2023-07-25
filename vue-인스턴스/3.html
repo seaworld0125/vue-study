@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ vTitle }}</h1>
+        <button v-on:click="toggleClickAction">toggle</button>
+        <button v-if="disabled">button</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                vTitle: 'Hello',
+                disabled: false
+            },
+            methods: {
+                toggleClickAction() {
+                    this.disabled = !this.disabled
+                }
+            }
+        })
+    </script>
+</body>
+</html>
